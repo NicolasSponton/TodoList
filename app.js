@@ -13,8 +13,10 @@ app.use(express.static("public"));
 
 const workItems = [];
 
-mongoose.connect('mongodb+srv://Admin:Password666@cluster0.ggw51.mongodb.net/todolistDB?retryWrites=true&w=majority');
+//Connect to the Data Base
+mongoose.connect('mongodb://127.0.0.1:27017/todolistDB');
 
+//Define items schemas and default items
 const itemSchema = new mongoose.Schema({
   name:String
 });
@@ -22,15 +24,15 @@ const itemSchema = new mongoose.Schema({
 const Item = mongoose.model("Item",itemSchema);
 
 const item1 = new Item({
-  name:"Buy Food"
+  name:"Study Node.js"
 });
 
 const item2 = new Item({
-  name:"second item"
+  name:"Continue Web Project"
 });
 
 const item3 = new Item({
-  name:"third item"
+  name:"Do homework"
 });
 
 const defaultItems = [item1,item2,item3];
@@ -137,6 +139,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
