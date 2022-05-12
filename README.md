@@ -8,3 +8,6 @@ Esta aplicación tambien utiliza ejs para interactuar con el DOM.
 
 ### Como utilizar
 La apliacion en node se ejecuta a partir del archivo app.js, a su vez la aplicación intentara conectarse a una instancia local de MongoDB.
+
+***
+![](images/home_page.png)
